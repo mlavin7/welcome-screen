@@ -14,12 +14,40 @@ const props = defineProps(
 <template>
 
 <div class=" card box">
-    <h2>{{ courseDatedate }}</h2>
-    <h2>{{ courseName }}</h2>
-    <p>{{ courseDescription}}</p>
+    <p class="hour">{{ courseDate }}</p>
+    <p class="name">{{ courseName }}</p>
+    <p class="description">{{ courseDescription}}</p>
 </div>
 
 </template>
-<style>
+<style scoped>
+ .card{
+    display:flex;
+    flex-direction: column;
+    border: solid 1px black;
+    background-color: blue;
+    width: 400px;
+    margin-top: 50px;
+    height: 100px; 
+    justify-items: center;
+    padding: 20px;
+    gap:5px; 
 
+ }
+ p{
+    font-size: small;
+
+ }
+
+ .hour {
+    color:red;
+    font-weight:bold
+ }
+ .name{
+    font-weight: bolder;
+    color: #e1a8a9;
+ }
+ .description{
+    color: #e1a8a9
+ }
 </style>
