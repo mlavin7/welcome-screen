@@ -1,47 +1,37 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import { ref} from "vue"
+
+import Cards from "./components/CourseCard.vue"
+  const currentDate = new Date().toDateString();
+
+  let blueCard = ref({
+    courseDate:"5845nzjn5",
+    courseName: "somethingwww", 
+    courseDescription: "somtheing wwwwelse"
+   });
+ 
 </script>
 
+
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+ <body>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
+   <header>
+    <h1>Wellcome To Opportunity</h1>
+    <h2>{{ currentDate }}</h2>
   </header>
+ <main>
+  <Cards v-bind="blueCard"/>
+ </main>
+    
 
-  <main>
-    <TheWelcome />
-  </main>
+  <footer>
+
+  </footer>
+ </body>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
