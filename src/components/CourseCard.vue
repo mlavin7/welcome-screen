@@ -15,7 +15,7 @@ const props = defineProps(
 
 <div class=" card box">
     <p class="hour">{{ courseDate }}</p>
-    <p class="name">{{ courseName }}</p>
+    <p class="name">{{ courseDate }}</p>
     <p class="description">{{ courseDescription}}</p>
 </div>
 
