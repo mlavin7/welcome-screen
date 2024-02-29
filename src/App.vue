@@ -20,6 +20,7 @@ async function fetchData() {
   const data = await res.json()
   allData.value= data.valueRanges[0].values
   console.log(allData)
+
   
 }
 
@@ -50,7 +51,7 @@ fetchData();
     <main>
     
        
-      <Cards v-for="(item, index) in allData" :key=index  :courseDate ="item[1]" :courseName="item[2]" :course-description="item[3]" />
+      <Cards v-for="(item, index) in allData" :key=index   :courseDate ="item[1]" :courseName="item[2]" :course-description="item[3]" :course-highlights="item[4]"  />
 
    
     </main>

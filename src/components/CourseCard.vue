@@ -5,18 +5,31 @@ const props = defineProps(
     {
         courseDate: String,
         courseName : String,
-        courseDescription: String
+        courseDescription: String,
+      courseHighlights : String
+   
     }
 )
+
+
 
 
 </script>
 <template>
 
-<div class=" card box">
+<div  >
+   <span v-if="courseHighlights !== 'default'" class=" card  green"  >
     <p class="hour">{{ courseDate }}</p>
-    <p class="name">{{ courseDate }}</p>
+    <p class="name">{{ courseName }}</p>
     <p class="description">{{ courseDescription}}</p>
+    </span>
+
+    <span  v-else  class=" card  blue"  >
+    <p class="hour">{{ courseDate }}</p>
+    <p class="name">{{ courseName }}</p>
+    <p class="description">{{ courseDescription}}</p>
+    </span>
+ 
 </div>
 
 </template>
@@ -25,7 +38,6 @@ const props = defineProps(
     display:flex;
     flex-direction: column;
     border: solid 1px black;
-    background-color: blue;
     width: 55vw;
     margin-top: 50px;
     height: 10vw; 
@@ -53,5 +65,12 @@ const props = defineProps(
  .description{
     color: #e1a8a9;
     font-size: 2vw;
+ }
+
+ .green{
+   background-color:green;
+ }
+ .blue{
+   background-color: blue ;
  }
 </style>
