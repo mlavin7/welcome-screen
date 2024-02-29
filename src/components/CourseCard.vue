@@ -26,28 +26,32 @@ const props = defineProps(
     flex-direction: column;
     border: solid 1px black;
     background-color: blue;
-    width: 400px;
+    width: 55vw;
     margin-top: 50px;
-    height: 100px; 
+    height: 10vw; 
     justify-items: center;
-    padding: 20px;
-    gap:5px; 
+    justify-content: space-between;
+    padding: 2%;
+     
 
  }
  p{
-    font-size: small;
-
+    font-size: 2vw;
+    width: 100%;
  }
 
  .hour {
     color:red;
-    font-weight:bold
+    font-weight:bold; 
+    font-size:2vw;
  }
  .name{
     font-weight: bolder;
     color: #e1a8a9;
+    font-size: 2vw;
  }
  .description{
-    color: #e1a8a9
+    color: #e1a8a9;
+    font-size: 2vw;
  }
 </style>

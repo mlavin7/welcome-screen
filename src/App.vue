@@ -4,12 +4,10 @@ import { ref } from "vue"
 import Cards from "./components/CourseCard.vue"
 const currentDate = new Date().toDateString();
 
-let blueCard = ref({
+let courseDate = ref("23.02.2024");
+let courseName = ref("a name");
+let courseDescription = ref("a descriptoion");
 
-  courseDate: "5845nzjn5",
-  courseName: "somethingwww",
-  courseDescription: "somtheing wwwwelse"
-});
 
 </script>
 
@@ -22,7 +20,7 @@ let blueCard = ref({
       <h2>{{ currentDate }}</h2>
     </header>
     <main>
-      <Cards v-bind="blueCard" />
+      <Cards :course-date="courseDate" :course-name="courseName" :course-description="courseDescription" />
     </main>
 
 
@@ -33,7 +31,12 @@ let blueCard = ref({
 </template>
 
 <style scoped>
+h1{
+  font-size: 5vw;
+}
 h2{
   color: darkgray;
+  font-size: 4vw;
+
 }
 </style>
