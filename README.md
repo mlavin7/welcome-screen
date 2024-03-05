@@ -33,3 +33,5 @@ npm run build
 ```sh
 npm run lint
 ```
+### vercel live :
+https://welcome-screen-sable.vercel.app/
