@@ -3,13 +3,21 @@ import { ref } from "vue"
 import Cards from "./components/CourseCard.vue"
 const sheet_id = import.meta.env.VITE_GOOGLE_SHEET_ID;
 const api_token = import.meta.env.VITE_GOOGLE_API_KEY;
-
-const currentDate = new Date().toDateString();
-
-
 let allData = ref([]); 
 
+const currentDate = new Date().toISOString().substring(0, 10);
 
+let highlightDate;
+
+function cdate(currentDate, courseDate) {
+    if (currentDate === courseDate) {
+        highlightDate = true;
+    } else {
+        highlightDate = false;
+    }
+}
+
+cdate()
 
 // for (const property in allData) {
 //   console.log(`${property}: ${allData[property]}`);
@@ -26,13 +34,7 @@ async function fetchData() {
 
 fetchData();
 
-// let cardNumber =[]; 
 
-//  for(let i =0;  i< allData.lenght; i++ ){
-//     cardNumber.push(allData[i])
-   
-//  }
-//  console.log(cardNumber)
 
 
 
@@ -68,7 +70,7 @@ fetchData();
 
 <style scoped>
 h1{
-  font-size: 5vw;
+  font-size: 4.5vw;
 }
 h2{
   color: darkgray;
