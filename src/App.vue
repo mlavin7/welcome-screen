@@ -115,7 +115,7 @@ ul{
     display:flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 20%; 
+    height: 20dvh; 
     position: fixed;
     Width: 100%;
     bottom: 0;
