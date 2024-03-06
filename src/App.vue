@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue"
 import Cards from "./components/CourseCard.vue"
-import Foots from "./components/Footer.vue"
+
 
 import { onMounted, onBeforeUnmount } from "vue";
 const sheet_id = import.meta.env.VITE_GOOGLE_SHEET_ID;
@@ -18,7 +18,7 @@ const timeInterval = ref("");
 onMounted(() => {
   timeInterval.value = setInterval(() => {
     fetchData();
-  }, 1000 * 60 * 30); // wait 30mins for next update (1000 * 60 * 30)
+  }, 1000 * 10); // wait 30mins for next update (1000 * 60 * 30)
 });
 onBeforeUnmount(() => {
   clearInterval(timeInterval.value); // clear the interval when the component is destroyed
@@ -55,7 +55,7 @@ fetchData();
 
 
 function sortedAsc ()  {allData.value.sort(
-  (objA, objB) => new Date(objA.courseDate) - new Date(objB.courseDate),
+  (objA, objB) => new Date(objA.props.courseDate) - new Date(objB.props.courseDate),
 );
 }
 sortedAsc();
@@ -69,7 +69,11 @@ console.log(sortedAsc())
 <template>
   <!-- <header></header>
  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> -->
-  
+ <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head> 
  <body>
 
     <header>
@@ -92,7 +96,7 @@ console.log(sortedAsc())
 
     
   </body>
-  <footer>
+  <footer class="footer">
     <ul>
     <li><img src="./assets/logos/STZH_SEB_Logo.png" alt=""></li>
     <li><img src="./assets/logos/Opportunity.png" alt=""></li>
@@ -107,7 +111,7 @@ h1{
 }
 h2{
   color: darkgray;
-  font-size: 4vw;
+  font-size: 3vw;
 
 }
 
@@ -115,11 +119,41 @@ ul{
     display:flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 20dvh; 
-    position: fixed;
-    Width: 100%;
-    bottom: 0;
-    z-index: 10;
+    list-style: none;
+    padding-left: 30px;
+    padding-right: 30px; 
+    
+    
 }
+ .footer{
+  background-color: white;
+  height: 14vw; 
+  max-height: 90px;
+  position: fixed;
+  Width: 100vw;
+  left: 0;
+  bottom: 0;
+  padding:10px; 
+  
 
+ }
+
+ img{
+  height: 5vw;
+  position: inherit;
+  max-height: 50px;
+
+  }
+
+  header{
+  display: grid;
+  justify-content: center;
+  position: fixed;
+  Width: 100vw;
+  left: 0;
+  top: 0;
+  padding:10px; 
+  background-color: #e8eff4 ;
+  }
+ 
 </style>
