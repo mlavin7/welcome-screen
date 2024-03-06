@@ -6,7 +6,7 @@ import vue from '@vitejs/plugin-vue'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
+    vue(), VitePWA({ registerType: 'autoUpdate' })
   ],
   resolve: {
     alias: {
@@ -14,3 +14,5 @@ export default defineConfig({
     }
   }
 })
+import { VitePWA } from 'vite-plugin-pwa'
+
